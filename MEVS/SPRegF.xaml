@@ -1,0 +1,127 @@
+﻿<Window x:Class="MEVS.SPRegF"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MEVS"
+        mc:Ignorable="d" Icon="/ico.png"
+        Title="SPRegF" Height="530" Width="580" AllowsTransparency="True"  Background="Transparent"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" 
+        WindowStyle="None">
+
+    <Border CornerRadius="35" Background="#C0F3F5" >
+        <Grid Margin="0,20,0,20" Width="550" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition  />
+                <RowDefinition Height="60"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Image Source="/Img/close.png" Width="30" Cursor="Hand" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="1" MouseLeftButtonDown="Image_MouseLeftButtonDown" PreviewKeyDown="Image_PreviewKeyDown"/>
+
+            <Label Grid.ColumnSpan="2"  Content="Service Provider Registration Form" Foreground="#0B2C44" FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <Label Grid.ColumnSpan="2" Margin="0,30,0,10" Content="Please fill up the requested fields" Foreground="#0B2C44" FontSize="20" HorizontalAlignment="Center" />
+
+            <Label Grid.Row="1" Content="Company Name :" Foreground="#0B2C44" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"   />
+            <Label Grid.Row="2" Content="Establishment Date :" Foreground="#0B2C44" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+            <DatePicker FontSize="15" x:Name="Estadate" Grid.Row="2" Grid.Column="1" Height="28" Width="250" HorizontalAlignment="Left" Margin="32,0,0,0" FirstDayOfWeek="Monday" IsTodayHighlighted="True"  />
+            <Border Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="32,0,0,0" Background="White" CornerRadius="12" Height="35" Width="250" >
+                <TextBox x:Name="CompNameValue" Background="Transparent" Width="235" Height="25" BorderThickness="0" FontSize="15"/>
+            </Border>
+
+       
+            <GroupBox Header="Plan Detail" FontSize="15" Margin="10" Grid.ColumnSpan="2" Grid.Row="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="220"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0" Height="190" Margin="10,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="65"/>
+                        </Grid.RowDefinitions>
+
+                        <Border  Background="White" HorizontalAlignment="Left" Margin="5,0,0,0"  Width="150" Height="30" CornerRadius="12">
+                            <Grid>
+                                <TextBox x:Name="PlanTiValue"  Background="Transparent" Width="130" Height="22" BorderThickness="0" FontSize="15"/>
+                                <TextBlock IsHitTestVisible="False" Text="Title" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,0,0" Foreground="DarkGray">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Text, ElementName=PlanTiValue}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            </Grid>
+                        </Border>
+                        <Border Grid.Row="1" HorizontalAlignment="Left" Margin="5,0,0,0"  Background="White" Width="150" Height="30" CornerRadius="12">
+                            <Grid>
+                                <TextBox x:Name="DurValue"   Background="Transparent" Width="130" Height="22" BorderThickness="0" FontSize="15" PreviewTextInput="DurValue_PreviewTextInput"/>
+                                <TextBlock IsHitTestVisible="False" Text="Duration (Month)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,0,0" Foreground="DarkGray">
+                                    <TextBlock.Style>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Text, ElementName=DurValue}" Value="">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                        <Border Grid.Row="2" HorizontalAlignment="Left" Margin="5,0,0,0" Background="White" Width="150" Height="30" CornerRadius="12">
+                            <Grid>
+                                <TextBox x:Name="PriceVAlue"   Background="Transparent" Width="130" Height="22" BorderThickness="0" FontSize="15" PreviewTextInput="PriceVAlue_PreviewTextInput" />
+                                <TextBlock IsHitTestVisible="False" Text="Price (RM)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,0,0" Foreground="DarkGray">
+                                    <TextBlock.Style>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Text, ElementName=PriceVAlue}" Value="">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                        <TextBlock FontSize="13" Grid.Row="3" Text="Description :"  Margin="15,0,0,0"/>
+                        <Border Grid.Row="4" HorizontalAlignment="Left" Margin="5" Background="White" CornerRadius="12">
+                            <RichTextBox x:Name="descValue"  FontSize="12" Margin="8" BorderThickness="0" SelectionBrush="#000078D7"/>
+                        </Border>
+                    </Grid>
+
+                    <Image x:Name="AddBtn" Grid.Column="1" Cursor="Hand" Width="25" HorizontalAlignment="Left" Source="/Img/add.png" AutomationProperties.HelpText="Add to the list" RenderTransformOrigin="0.5,0.918" MouseLeftButtonDown="AddBtn_MouseLeftButtonDown" />
+                    <Border Grid.Column="1" Margin="40,10,10,10" Grid.ColumnSpan="2" CornerRadius="12" Background="White">
+                    <ListBox x:Name="PlanListB" Height="145" Width="220" Background="Transparent" FontSize="15" BorderThickness="0" />
+                    </Border>
+                </Grid>
+            </GroupBox>
+
+            <Button Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Register" FontSize="20" FontWeight="Bold"
+             Cursor="Hand" Width="280" Height="40" Background="#0B2C44" Style="{DynamicResource BtnHov}" Click="Button_Click"/>
+
+        </Grid>
+    </Border>
+</Window>

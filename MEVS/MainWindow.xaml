@@ -1,0 +1,94 @@
+﻿<Window x:Name="Main" x:Class="MEVS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MEVS"
+        AllowsTransparency="True"  Background="Transparent"  Icon="/ico.png"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" 
+        Title="Login" Height="720" Width="1280" WindowStyle="None" TabIndex="0">
+    <Border CornerRadius="35">
+        <Border.Background>
+            <ImageBrush ImageSource="/Img/body.jpg"/>
+        </Border.Background>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition/>
+                <RowDefinition Height="120"/>
+            </Grid.RowDefinitions>
+
+            <Image Source="img\large.png" 
+                   HorizontalAlignment="Left" Width="120" Margin="50,0,0,0"/>
+            <Label Content="Welcome to the Mala Electric System" FontSize="27"
+                   FontWeight="Bold" Foreground="#FFFFFF" VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+            <Image Source="/Img/sd.png" Width="25" Cursor="Hand" 
+                   HorizontalAlignment="Right" Margin="0,0,30,55" 
+                   MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+
+            <Grid Grid.Row="1" Name="ContBody" x:FieldModifier="public">
+
+            </Grid>
+            <Grid Grid.Row="1" Name="MainBody" x:FieldModifier="public">
+                <Border  CornerRadius="12" Background="#7F030B11" Width="680" Margin="0,50,0,50" >
+                    <Grid x:Name="body" x:FieldModifier="public">
+                        <Label FontSize="20" Content="Please Login/Register to continue" 
+                       Foreground="#FFFFFF" Margin="0,30,0,0" HorizontalAlignment="Center"/>
+
+                        <Grid Margin="0,100,0,30" Width="440">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Label Content="Username" Foreground="#FFFFFF" FontSize="15" VerticalAlignment="Center" Margin="60,0,0,0"/>
+                                <Label Content="Password" Foreground="#FFFFFF" FontSize="15" VerticalAlignment="Center" Margin="300,0,0,0"/>
+                            </Grid>
+                            <Grid Grid.Row="1" HorizontalAlignment="Left" Margin="0,0,0,5">
+                                <Border Margin="5" Background="White" CornerRadius="12"
+                                    Width="200">
+                                    <TextBox x:Name="UnameValue" Background="Transparent" Width="160" Height="25" 
+                                         BorderThickness="0" FontSize="18"/>
+                                </Border>
+                            </Grid>
+                            <Grid Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,0,5">
+                                <Border Margin="5" Background="White" CornerRadius="12"
+                                    Width="200" HorizontalAlignment="Left">
+                                    <PasswordBox x:Name="PassValue" Background="Transparent" Width="160" Height="25" 
+                                         BorderThickness="0" FontSize="18"/>
+                                </Border>
+                            </Grid>
+                            <Grid Grid.Row="2" HorizontalAlignment="Center" >
+
+                                <Button Content="Login" FontSize="20" FontWeight="Bold"
+                                        Cursor="Hand" Width="430" Margin="5" Style="{DynamicResource BtnHov}" Click="Button_Click" PreviewKeyDown="Button_PreviewKeyDown" />
+                            </Grid>
+                            <Grid Grid.Row="3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="19*"/>
+                                    <ColumnDefinition Width="36*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="Forgot Password?" FontSize="15" FontWeight="Bold" 
+                                        Cursor="Hand" Foreground="White" HorizontalAlignment="Left" Grid.Column="1" Margin="154,0,0,0"/>
+                                <Label x:Name="err" Content="Incorrect Credentials" FontSize="15" FontWeight="Bold" Visibility="Hidden"
+                                        Foreground="#0C9DC9" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="142,0,0,0" />
+
+                            </Grid>
+                            <Grid Grid.Row="4" HorizontalAlignment="Center">
+                                <Button Content="Register" FontSize="20" FontWeight="Bold"
+                                        Cursor="Hand" Width="430" Margin="5" Background="#030B11"
+                                    Style="{DynamicResource BtnHov}" Click="Button_Click_2"  />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Label Grid.Row="1" Foreground="#FFFFFF" FontSize="20" FontWeight="Bold"  
+                       Margin="910,360,0,0" Cursor="Hand" x:Name="BackBtn" MouseLeftButtonDown="BackBtn_MouseLeftButtonDown" Visibility="Hidden" PreviewKeyDown="BackBtn_PreviewKeyDown">Back</Label>
+        </Grid>
+    </Border>
+</Window>

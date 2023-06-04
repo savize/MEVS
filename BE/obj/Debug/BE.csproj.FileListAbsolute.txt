@@ -1,0 +1,6 @@
+C:\Users\Savize\source\repos\MEVS\BE\bin\Debug\BE.dll
+C:\Users\Savize\source\repos\MEVS\BE\bin\Debug\BE.pdb
+C:\Users\Savize\source\repos\MEVS\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+C:\Users\Savize\source\repos\MEVS\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+C:\Users\Savize\source\repos\MEVS\BE\obj\Debug\BE.dll
+C:\Users\Savize\source\repos\MEVS\BE\obj\Debug\BE.pdb

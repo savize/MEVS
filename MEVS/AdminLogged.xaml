@@ -1,0 +1,78 @@
+﻿<Window x:Class="MEVS.AdminLogged"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MEVS"  Icon="/ico.png"
+        mc:Ignorable="d"
+          Title="AdminLogged" AllowsTransparency="True"  Background="Transparent"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" 
+        Height="720" Width="1280" WindowStyle="None">
+    <Border CornerRadius="35">
+        <Border.Background>
+            <ImageBrush ImageSource="Img\admin.jpg"/>
+        </Border.Background>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition />
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" HorizontalAlignment="Left" CornerRadius="35,35,90,0" Background="#7F030B11" Width="1280" Height="130" VerticalAlignment="Top" >
+                <Grid>
+                    <Image Source="img\large.png" 
+                   HorizontalAlignment="Left" Width="120" Margin="70,0,0,0"/>
+                    <Label  Content="Welcome Admin" FontSize="30" FontWeight="Bold" Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Image Cursor="Hand" Source="/Img/adm.png" Width="50" HorizontalAlignment="Right" Margin="0,0,60,0" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="260"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" >
+                    <Border  HorizontalAlignment="Left" Width="250" CornerRadius="0,0,90,0" Margin="0,-20,0,0" Background="#7F030B11" >
+                        <Grid>
+                            <StackPanel  Height="330" VerticalAlignment="Top" Margin="0,70,0,0">
+                                <Label Content="Manage Users" FontSize="20" FontWeight="Bold" Foreground="#FFFFFF" Margin="50,10,0,0"/>
+                            <Label x:Name="EvOwnTab" Content="○  EV Owners" Cursor="Hand" FontSize="18" FontWeight="Bold" Foreground="#C0F3F5" Margin="50,10,0,0" MouseLeftButtonDown="EvOwnTab_MouseLeftButtonDown"/>
+                            <Label x:Name="CSTab" Content="○  Charging Stations" Cursor="Hand" FontSize="18" FontWeight="Bold" Foreground="#C0F3F5" Margin="50,10,0,0" MouseLeftButtonDown="CSTab_MouseLeftButtonDown"/>
+                                <Label x:Name="SPTab" Content="○  Service Providers" Cursor="Hand" FontSize="18" FontWeight="Bold" Foreground="#C0F3F5" Margin="50,10,0,0" MouseLeftButtonDown="SPTab_MouseLeftButtonDown"/>
+                                <Label Content="Maintenance" FontSize="20" FontWeight="Bold" Foreground="#FFFFFF" Margin="50,10,0,0"/>
+                                <Label x:Name="bk" Content="○  Backup Data" Cursor="Hand" FontSize="18" FontWeight="Bold" Foreground="#C0F3F5" Margin="50,10,0,0" MouseLeftButtonDown="bk_MouseLeftButtonDown"/>
+                                <Label x:Name="rest" Content="○  Restore Data" Cursor="Hand" FontSize="18" FontWeight="Bold" Foreground="#C0F3F5" Margin="50,10,0,0" MouseLeftButtonDown="rest_MouseLeftButtonDown"/>
+
+                            </StackPanel>
+                            <StackPanel Margin="0,70,0,0" HorizontalAlignment="Left">
+                                <Image Width="30" Source="/Img/UsMan.png" VerticalAlignment="Top" Margin="13,10,0,0"  />
+                                <Image Width="30" Source="/Img/Bk.png" VerticalAlignment="Top" Margin="13,152,0,0"  />
+
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="1" x:Name="mainCon" Visibility="Hidden" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="70"/>
+                    </Grid.RowDefinitions>
+                    <Border Background="#9909ACA7" Width="980" HorizontalAlignment="Left" CornerRadius="0,35,0,35" >
+                        <Label HorizontalContentAlignment="Center" Content="Double click on any item to deactive the selected one." FontSize="20" Foreground="#FFFFFF"/>
+                    </Border>
+
+                    <DataGrid x:Name="Dg" Grid.Row="1" Margin="20,20,60,30" FontSize="13" CanUserAddRows="False" CanUserDeleteRows="False"  ColumnWidth="*" MaxColumnWidth="940" IsReadOnly="True" MouseDoubleClick="Dg_MouseDoubleClick"/>
+                    <Button Margin="-240,0,0,20" x:Name="btn" Grid.Row="2" Content="Export Report" FontSize="20" FontWeight="Bold" Cursor="Hand" Width="230" Background="#09ACA7" Style="{DynamicResource BtnHov}" Click="Button_Click" />
+                </Grid>
+
+
+
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

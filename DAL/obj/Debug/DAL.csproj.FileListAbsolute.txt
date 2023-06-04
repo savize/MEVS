@@ -1,0 +1,16 @@
+C:\Users\Savize\source\repos\MEVS\DAL\bin\Debug\DAL.dll.config
+C:\Users\Savize\source\repos\MEVS\DAL\bin\Debug\DAL.dll
+C:\Users\Savize\source\repos\MEVS\DAL\bin\Debug\DAL.pdb
+C:\Users\Savize\source\repos\MEVS\DAL\bin\Debug\BE.dll
+C:\Users\Savize\source\repos\MEVS\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Savize\source\repos\MEVS\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Savize\source\repos\MEVS\DAL\bin\Debug\BE.pdb
+C:\Users\Savize\source\repos\MEVS\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Savize\source\repos\MEVS\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Savize\source\repos\MEVS\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\Savize\source\repos\MEVS\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Savize\source\repos\MEVS\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Savize\source\repos\MEVS\DAL\obj\Debug\DAL.dll
+C:\Users\Savize\source\repos\MEVS\DAL\obj\Debug\DAL.pdb
+C:\Users\Savize\source\repos\MEVS\DAL\obj\Debug\DAL.Migrations.InitialCreate.resources
+C:\Users\Savize\source\repos\MEVS\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
